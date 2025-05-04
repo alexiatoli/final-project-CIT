@@ -1,0 +1,81 @@
+// Purdue color variables
+$purdue-gold: #CFB991;
+$purdue-black: #000000;
+$purdue-gray: #9E9E9E;
+$purdue-white: #FFFFFF;
+
+// Quadrant styling
+.quadrant {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    h2 {
+        color: $purdue-white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        z-index: 2;
+    }
+    
+    &:hover {
+        transform: scale(1.03);
+    }
+    
+    // Individual quadrant colors
+    &.software {
+        background-color: darken($purdue-gold, 15%);
+    }
+    
+    &.data {
+        background-color: lighten($purdue-black, 20%);
+    }
+    
+    &.networking {
+        background-color: $purdue-gray;
+    }
+    
+    &.cybersecurity {
+        background-color: darken($purdue-gold, 30%);
+    }
+}
+
+// Careers dropdown
+.careers-dropdown {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba($purdue-white, 0.9);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    padding: 15px;
+    max-height: 70%;
+    overflow-y: auto;
+    
+    .quadrant.active & {
+        transform: translateY(0);
+    }
+    
+    .career-item {
+        padding: 5px 0;
+        cursor: pointer;
+        &:hover {
+            color: $purdue-gold;
+        }
+    }
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(md) {
+    .quadrant-row {
+        flex-direction: column;
+    }
+    
+    .quadrant {
+        height: 200px;
+    }
+}
