@@ -1,39 +1,34 @@
-// Define Purdue colors
-$boilerGold: #F7C100;
-$boilerBlack: #E1E1E1;
-$boilerGrey: #5F5F5F;
-$boilerWhite: #FFFFFF;
-
-// Apply Purdue colors to the body
 body {
-    font-family: Arial, sans-serif;
-    background-color: $boilerWhite;
-    color: $boilerBlack;
+  background-color: #A7A8AA;
+  color: #2E2A47;
+  font-family: 'Arial', sans-serif;
 }
-
 header {
-    background-color: $boilerGold;
-    color: $boilerWhite;
-    padding: 20px;
+  background-color: #F6A800;
+  color: white;
+  padding: 20px 0;
+}
+.card {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.modal-content {
+  background-color: #A7A8AA;
+  color: #2E2A47;
+}
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    font-size: 18px;
+  }
 }
 
-.quadrant {
-    background-color: $boilerGrey;
-    color: $boilerWhite;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-
-    &:hover {
-        background-color: $boilerGold;
-    }
-}
-
-footer {
-    background-color: $boilerGrey;
-    color: $boilerWhite;
-    padding: 10px;
-}
 
