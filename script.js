@@ -53,4 +53,93 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 pathway.careers.forEach(career => {
                     const careerItem = document.createElement('div');
-                    careerItem.className = 'career
+                    careerItem.className = 'career-item';
+                    careerItem.textContent = career.name;
+                    careerItem.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        showPathwayModal(quadrantId, career);
+                    });
+                    dropdown.appendChild(careerItem);
+                });
+            }
+        });
+    });
+    
+    // Explore button animation
+    const exploreBtn = document.getElementById('exploreBtn');
+    exploreBtn.addEventListener('click', function() {
+        // Scroll to quadrants with animation
+        document.querySelector('.quadrant-container').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+        
+        // Add pulse animation to all quadrants
+        quadrants.forEach(quadrant => {
+            quadrant.classList.add('animate__pulse');
+            setTimeout(() => {
+                quadrant.classList.remove('animate__pulse');
+            }, 2000);
+        });
+    });
+    
+    // Initialize modal
+    const pathwayModal = new bootstrap.Modal(document.getElementById('pathwayModal'));
+});
+
+// Show pathway modal with career details
+function showPathwayModal(quadrantId, career) {
+    const pathway = pathways[quadrantId];
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    
+    modalTitle.textContent = career.name;
+    
+    modalBody.innerHTML = `
+        <div class="row">
+            <div class="col-md-6">
+                <img src="${pathway.image}" alt="${pathway.title}" class="pathway-image img-fluid">
+                <h4>${pathway.title}</h4>
+                <p>${pathway.description}</p>
+                <div class="degree-info p-3 bg-light rounded">
+                    <h5>Degree Information</h5>
+                    <p>${pathway.degreeInfo}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="career-details">
+                    <h4>Career Details</h4>
+                    <p><strong>Description:</strong> ${career.description}</p>
+                    <p><strong>Suggested Degree:</strong> ${career.degree}</p>
+                    <p><strong>Average Salary Range:</strong> ${career.salary}</p>
+                    
+                    <div class="skills mt-4">
+                        <h5>Key Skills:</h5>
+                        <ul>
+                            <li>${getSkillsForCareer(quadrantId, career.name)}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const pathwayModal = new bootstrap.Modal(document.getElementById('pathwayModal'));
+    pathwayModal.show();
+}
+
+// Helper function to get skills for career
+function getSkillsForCareer(quadrantId, careerName) {
+    // This would be expanded with actual skills data
+    switch(quadrantId) {
+        case 'software':
+            return "Programming, Problem Solving, Software Design";
+        case 'data':
+            return "Database Management, SQL, Data Analysis";
+        case 'networking':
+            return "Network Configuration, Troubleshooting, Security";
+        case 'cybersecurity':
+            return "Security Protocols, Risk Assessment, Ethical Hacking";
+        default:
+            return "Technical Skills, Communication, Teamwork";
+    }
+}
