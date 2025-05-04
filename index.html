@@ -1,84 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIT Career Pathways</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/favicon.ico">
+    <title>Applied Computing - CIT 312</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to SCSS/CSS file -->
+    <link rel="icon" href="favicon.ico"> <!-- Favicon -->
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SCSS Compiled File -->
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-    <header class="text-center p-4">
-        <h1>CIT Career Pathways</h1>
-        <p>Discover your career with a degree in Applied Computing!</p>
-    </header>
 
-    <main class="container">
-        <div class="row">
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="text-center mt-4">
+            <img src="CIT-logo.png" alt="CIT Logo" class="img-fluid mb-3">
+            <h1 class="display-4">Applied Computing</h1>
+        </header>
+
+        <!-- Quadrants (Career Areas) -->
+        <div class="row text-center mb-4">
             <!-- Software Development Quadrant -->
-            <div class="col-md-3 quadrant" id="software">
-                <h2>Software Development</h2>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card" data-toggle="modal" data-target="#softwareDevModal">
+                    <img src="software-development.jpg" class="card-img-top" alt="Software Development">
+                    <div class="card-body">
+                        <h5 class="card-title">Software Development</h5>
+                    </div>
+                </div>
             </div>
 
             <!-- Cybersecurity Quadrant -->
-            <div class="col-md-3 quadrant" id="cybersecurity">
-                <h2>Cybersecurity</h2>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card" data-toggle="modal" data-target="#cybersecurityModal">
+                    <img src="cybersecurity.jpg" class="card-img-top" alt="Cybersecurity">
+                    <div class="card-body">
+                        <h5 class="card-title">Cybersecurity</h5>
+                    </div>
+                </div>
             </div>
 
             <!-- Networking Quadrant -->
-            <div class="col-md-3 quadrant" id="networking">
-                <h2>Networking</h2>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card" data-toggle="modal" data-target="#networkingModal">
+                    <img src="networking.jpg" class="card-img-top" alt="Networking">
+                    <div class="card-body">
+                        <h5 class="card-title">Networking</h5>
+                    </div>
+                </div>
             </div>
 
             <!-- Data Management Quadrant -->
-            <div class="col-md-3 quadrant" id="data-management">
-                <h2>Data Management</h2>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card" data-toggle="modal" data-target="#dataManagementModal">
+                    <img src="data-management.jpg" class="card-img-top" alt="Data Management">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Management</h5>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Quiz Section -->
-        <div class="quiz-section mt-5">
-            <h3>Find Your Path</h3>
-            <form id="quizForm">
-                <div class="form-group">
-                    <label for="question1">Question 1: What type of work do you prefer?</label>
-                    <select class="form-control" id="question1">
-                        <option value="software">Software Development</option>
-                        <option value="cybersecurity">Cybersecurity</option>
-                        <option value="networking">Networking</option>
-                        <option value="data-management">Data Management</option>
-                    </select>
+        <!-- Modals for Career Info -->
+        <!-- Software Development Modal -->
+        <div class="modal fade" id="softwareDevModal" tabindex="-1" role="dialog" aria-labelledby="softwareDevModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="softwareDevModalLabel">Software Development</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Explore careers like Web Developer, Mobile App Developer, Software Engineer. Suggested degree: Software Development.</p>
+                    </div>
                 </div>
-                <!-- Add 9 more questions here -->
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </main>
-
-    <!-- Modal for Career Information -->
-    <div class="modal fade" id="careerModal" tabindex="-1" role="dialog" aria-labelledby="careerModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="careerModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="careerInfo"></div>
             </div>
         </div>
+
+        <!-- Similar Modals for other concentrations can be added below -->
+        
     </div>
 
-    <footer class="text-center mt-4">
-        <p>Powered by CIT | Purdue University</p>
-    </footer>
-
+    <!-- Bootstrap JS & jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js"></script> <!-- Link to your custom JS -->
 </body>
+
 </html>
 
