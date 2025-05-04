@@ -1,71 +1,66 @@
-// Ensure that the DOM is fully loaded before running scripts
-$(document).ready(function () {
-    
-    // Handle clicking on quadrants to show career info
-    $(".quadrant").click(function () {
-        const quadrantId = $(this).attr('id'); // Get the ID of the clicked quadrant
-        let careerInfo = '';
+// Example quiz array with 10 questions
+const questions = [
+    {
+        question: "Which area do you find most interesting?",
+        options: ["Software Development", "Cybersecurity", "Networking", "Data Management"],
+        correctAnswer: "Software Development"
+    },
+    {
+        question: "What type of work do you enjoy the most?",
+        options: ["Building and coding software", "Protecting systems from threats", "Managing networks", "Handling large sets of data"],
+        correctAnswer: "Building and coding software"
+    },
+    {
+        question: "Which of the following careers involves securing computer systems and networks?",
+        options: ["Web Developer", "Network Engineer", "Cybersecurity Analyst", "Database Administrator"],
+        correctAnswer: "Cybersecurity Analyst"
+    },
+    {
+        question: "If you enjoy designing websites and web applications, which concentration is most suitable for you?",
+        options: ["Software Development", "Cybersecurity", "Networking", "Data Management"],
+        correctAnswer: "Software Development"
+    },
+    {
+        question: "Which degree would likely prepare you for a career as a network administrator?",
+        options: ["Software Development", "Cybersecurity", "Networking", "Data Management"],
+        correctAnswer: "Networking"
+    },
+    {
+        question: "Which field focuses on managing and analyzing data using databases and tools?",
+        options: ["Software Development", "Cybersecurity", "Networking", "Data Management"],
+        correctAnswer: "Data Management"
+    },
+    {
+        question: "Which of the following jobs is associated with protecting an organization’s information systems from cyberattacks?",
+        options: ["Software Engineer", "Cybersecurity Analyst", "Network Administrator", "Data Scientist"],
+        correctAnswer: "Cybersecurity Analyst"
+    },
+    {
+        question: "What career would involve configuring and maintaining computer networks?",
+        options: ["Software Developer", "Cybersecurity Specialist", "Network Engineer", "Database Administrator"],
+        correctAnswer: "Network Engineer"
+    },
+    {
+        question: "Which of the following is a major task of a software developer?",
+        options: ["Designing websites", "Fixing network issues", "Writing code for applications", "Protecting data from breaches"],
+        correctAnswer: "Writing code for applications"
+    },
+    {
+        question: "Which of the following roles focuses on managing large sets of data for analytics?",
+        options: ["Data Analyst", "Cybersecurity Specialist", "Software Developer", "Network Engineer"],
+        correctAnswer: "Data Analyst"
+    }
+];
 
-        // Based on the clicked quadrant, define career info
-        switch (quadrantId) {
-            case 'software':
-                careerInfo = 'Software Development involves designing, coding, testing, and maintaining software applications. Suggested Degree: Applied Computing in Software Development.';
-                break;
-            case 'cybersecurity':
-                careerInfo = 'Cybersecurity is about protecting systems and networks from digital threats. Suggested Degree: Applied Computing in Cybersecurity.';
-                break;
-            case 'networking':
-                careerInfo = 'Networking involves managing and optimizing the communication systems within organizations. Suggested Degree: Applied Computing in Networking.';
-                break;
-            case 'data-management':
-                careerInfo = 'Data Management involves managing and utilizing data effectively for businesses. Suggested Degree: Applied Computing in Data Management.';
-                break;
-            default:
-                careerInfo = 'Select a career pathway for more information.';
+// Event listener for quiz start button
+document.getElementById("quizStartBtn").addEventListener("click", function() {
+    let score = 0;
+    questions.forEach((q, index) => {
+        const userAnswer = prompt(`${q.question}\n${q.options.join('\n')}`);
+        if (userAnswer === q.correctAnswer) {
+            score++;
         }
-
-        // Show the modal with relevant career info
-        $('#careerModalLabel').text(quadrantId.charAt(0).toUpperCase() + quadrantId.slice(1));
-        $('#careerInfo').text(careerInfo);
-        $('#careerModal').modal('show');
     });
-
-    // Handle quiz form submission
-    $("#quizForm").submit(function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Collect quiz answers
-        const answers = {
-            question1: $('#question1').val(),
-            // Collect other questions similarly
-        };
-
-        // Display results based on the answers
-        let recommendedPathway = '';
-
-        switch (answers.question1) {
-            case 'software':
-                recommendedPathway = 'You seem to be interested in Software Development. A degree in Software Development could be a good fit for you!';
-                break;
-            case 'cybersecurity':
-                recommendedPathway = 'Cybersecurity could be your calling! Consider pursuing a degree in Cybersecurity.';
-                break;
-            case 'networking':
-                recommendedPathway = 'Networking could be an exciting career for you! A degree in Networking is a great choice.';
-                break;
-            case 'data-management':
-                recommendedPathway = 'You might enjoy working with data! Consider a degree in Data Management.';
-                break;
-            default:
-                recommendedPathway = 'Please select your preferences to get a recommendation.';
-        }
-
-        // Show the result in a modal or a designated area
-        alert(recommendedPathway); // Or render in a new element like a result box
-
-        // Optionally, reset the form or display more detailed recommendations
-        // $("#quizForm")[0].reset();
-    });
-
+    alert(`You scored ${score} out of ${questions.length}`);
 });
 
