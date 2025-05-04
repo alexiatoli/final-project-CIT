@@ -1,28 +1,27 @@
 $color_1: var(--purdue-black);
 $color_2: var(--purdue-gold);
-$color_3: white;
-$font-family_1: 'Helvetica Neue', Arial, sans-serif;
+$color_3: var(--purdue-white);
+$font-family_1: Arial, sans-serif;
 $background-color_1: var(--purdue-black);
 $background-color_2: #b59a6a;
 $background-color_3: #333333;
-$background-color_4: var(--purdue-gray);
+$background-color_4: #7d7d7d;
 $background-color_5: #8a6d3b;
-$background-color_6: var(--purdue-gold);
+$background-color_6: rgba(255,255,255,0.9);
+$background-color_7: var(--purdue-white);
+$background-color_8: var(--purdue-gold);
 
-/* Purdue Color Scheme */
+/* Purdue Colors */
 /* Base Styles */
 /* Navigation */
 /* Hero Section */
-/* Quadrant Styles */
-/* Individual Quadrant Colors */
-/* Career Dropdown */
-/* Modal Styles */
-/* Button Styles */
-/* Responsive Design */
+/* Quadrants */
+/* Careers List */
+/* Quiz Section */
+/* Responsive Adjustments */
 &:root {
 	--purdue-gold: #CFB991;
 	--purdue-black: #000000;
-	--purdue-gray: #9E9E9E;
 	--purdue-white: #FFFFFF;
 }
 body {
@@ -31,47 +30,45 @@ body {
 }
 .navbar {
 	background-color: $background-color_1 !important;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	border-bottom: 2px solid var(--purdue-gold);
+}
+.navbar-brand {
+	font-weight: bold;
+	display: flex;
+	align-items: center;
 }
 .nav-link {
 	color: $color_2 !important;
 	font-weight: 500;
 }
 .hero {
-	background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/tech-bg.jpg');
-	background-size: cover;
-	background-position: center;
-	padding: 5rem 0;
-	margin-top: 56px;
-}
-.quadrant-container {
-	min-height: 70vh;
+	padding: 2rem 0;
+	h1 {
+		font-size: 2.5rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+	.lead {
+		font-size: 1.25rem;
+		color: $color_2;
+	}
 }
 .quadrant {
-	height: 50vh;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-	transition: all 0.3s ease;
+	min-height: 300px;
+	color: $color_3;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
+	transition: all 0.3s ease;
+	cursor: pointer;
 	h2 {
 		font-weight: bold;
-		font-size: 2rem;
-		transition: all 0.3s ease;
+		font-size: 1.75rem;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
 	}
-	&:hover {
-		h2 {
-			transform: scale(1.05);
-		}
-	}
-}
-.quadrant-content {
-	text-align: center;
-	padding: 2rem;
-	color: $color_3;
-	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 .software {
 	background-color: $background-color_2;
@@ -85,76 +82,49 @@ body {
 .cybersecurity {
 	background-color: $background-color_5;
 }
-.career-dropdown {
-	position: absolute;
-	bottom: -100%;
-	left: 0;
-	right: 0;
-	background: rgba(255,255,255,0.95);
+.careers {
+	display: none;
+	background-color: $background-color_6;
+	color: $color_1;
 	padding: 1rem;
-	transition: all 0.5s ease;
-	max-height: 70%;
-	overflow-y: auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	border-radius: 5px;
+	width: 100%;
 }
 .quadrant.active {
-	.career-dropdown {
-		bottom: 0;
+	.careers {
+		display: block;
 	}
 }
 .career-item {
-	background: var(--purdue-white);
-	color: $color_1;
-	padding: 0.75rem 1.5rem;
-	margin: 0.5rem;
-	border-radius: 50px;
-	font-weight: 500;
-	transition: all 0.3s ease;
+	padding: 0.5rem;
+	margin: 0.5rem 0;
+	background-color: $background-color_7;
+	border-radius: 4px;
 	cursor: pointer;
+	transition: all 0.3s ease;
 	&:hover {
-		background: var(--purdue-gold);
-		transform: translateY(-3px);
+		background-color: $background-color_8;
 	}
 }
-.modal-header {
-	border-bottom: 2px solid var(--purdue-gold);
-}
 .btn-gold {
-	background-color: $background-color_6;
+	background-color: $background-color_8;
 	color: $color_1;
 	font-weight: bold;
 	border: none;
+	padding: 0.75rem 1.5rem;
 	&:hover {
 		background-color: $background-color_2;
 	}
 }
 @media (max-width: 992px) {
 	.quadrant {
-		height: 40vh;
-		h2 {
-			font-size: 1.8rem;
-		}
-	}
-}
-@media (max-width: 768px) {
-	.quadrant-container {
-		flex-direction: column;
-	}
-	.quadrant {
-		height: 25vh;
-		width: 100%;
-	}
-}
-@media (max-width: 576px) {
-	.quadrant {
 		h2 {
 			font-size: 1.5rem;
 		}
 	}
-	.career-item {
-		padding: 0.5rem 1rem;
-		font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+	.quadrant {
+		min-height: 200px;
 	}
 }
