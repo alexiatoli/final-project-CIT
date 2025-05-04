@@ -3,48 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIT Career Pathways - Purdue University</title>
+    <title>CIT Career Pathways | Purdue University</title>
     <!-- Bootstrap CSS -->
-    <!-- Custom CSS from SCSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 <body>
-    <header class="text-center py-4">
-        <img src="purdue-cit-logo.png" alt="CIT Logo" class="logo">
-        <h1>APPLIED COMPUTING</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/cit-logo.png" alt="CIT Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz">Career Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.purdue.edu/cit/" target="_blank">About CIT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-black text-gold py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">APPLIED COMPUTING</h1>
+            <p class="lead">Explore career pathways in Computer and Information Technology</p>
+        </div>
     </header>
 
-    <main class="container-fluid">
-        <div class="row quadrant-row">
-            <!-- Software Development Quadrant -->
-            <section class="col-md-6 col-lg-3 quadrant software" id="software">
-                <h2>SOFTWARE</h2>
-                <div class="careers-dropdown">
-                    <!-- Careers will populate here when clicked -->
+    <!-- Main Quadrants -->
+    <main class="container-fluid p-0">
+        <div class="row g-0 quadrant-row">
+            <!-- Software Development -->
+            <section class="col-lg-3 col-md-6 quadrant software" id="software">
+                <div class="quadrant-content">
+                    <h2>SOFTWARE</h2>
                 </div>
             </section>
-
-            <!-- Data Management Quadrant -->
-            <section class="col-md-6 col-lg-3 quadrant data" id="data">
-                <h2>DATA MANAGEMENT</h2>
-                <div class="careers-dropdown">
-                    <!-- Careers will populate here when clicked -->
+            
+            <!-- Data Management -->
+            <section class="col-lg-3 col-md-6 quadrant data" id="data">
+                <div class="quadrant-content">
+                    <h2>DATA MANAGEMENT</h2>
                 </div>
             </section>
-
-            <!-- Networking Quadrant -->
-            <section class="col-md-6 col-lg-3 quadrant networking" id="networking">
-                <h2>NETWORKING</h2>
-                <div class="careers-dropdown">
-                    <!-- Careers will populate here when clicked -->
+            
+            <!-- Networking -->
+            <section class="col-lg-3 col-md-6 quadrant networking" id="networking">
+                <div class="quadrant-content">
+                    <h2>NETWORKING</h2>
                 </div>
             </section>
-
-            <!-- Cybersecurity Quadrant -->
-            <section class="col-md-6 col-lg-3 quadrant cybersecurity" id="cybersecurity">
-                <h2>CYBERSECURITY</h2>
-                <div class="careers-dropdown">
-                    <!-- Careers will populate here when clicked -->
+            
+            <!-- Cybersecurity -->
+            <section class="col-lg-3 col-md-6 quadrant cybersecurity" id="cybersecurity">
+                <div class="quadrant-content">
+                    <h2>CYBERSECURITY</h2>
                 </div>
             </section>
         </div>
@@ -52,12 +81,109 @@
 
     <!-- Career Modal -->
     <div class="modal fade" id="careerModal" tabindex="-1">
-        <!-- Modal content will be inserted here by JavaScript -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-black text-gold">
+                    <h5 class="modal-title" id="careerModalLabel">Career Information</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="careerModalBody">
+                    <!-- Content will be inserted here by JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Interactive Quiz Section -->
-    <section class="quiz-container">
-        <!-- Quiz will be implemented here -->
+    <!-- Career Quiz Section -->
+    <section class="py-5 bg-light" id="quiz">
+        <div class="container">
+            <h2 class="text-center mb-5">CIT Career Quiz</h2>
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <form id="careerQuizForm">
+                        <!-- Question 1 -->
+                        <div class="mb-4">
+                            <h5>1. What type of work environment do you prefer?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1a" value="software">
+                                <label class="form-check-label" for="q1a">Creating new applications and software</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1b" value="data">
+                                <label class="form-check-label" for="q1b">Working with data and analytics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1c" value="networking">
+                                <label class="form-check-label" for="q1c">Maintaining and optimizing networks</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1d" value="cybersecurity">
+                                <label class="form-check-label" for="q1d">Protecting systems from threats</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="mb-4">
+                            <h5>2. Which task sounds most interesting to you?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2a" value="software">
+                                <label class="form-check-label" for="q2a">Developing a mobile app</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2b" value="data">
+                                <label class="form-check-label" for="q2b">Analyzing trends in large datasets</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2c" value="networking">
+                                <label class="form-check-label" for="q2c">Setting up a secure corporate network</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2d" value="cybersecurity">
+                                <label class="form-check-label" for="q2d">Identifying vulnerabilities in a system</label>
+                            </div>
+                        </div>
+                        
+                        <!-- More questions... (Total 10) -->
+                        
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-gold btn-lg px-5">Get Results</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Quiz Results -->
+                    <div id="quizResults" class="mt-4 p-4 bg-black text-gold rounded d-none">
+                        <h3 class="text-center">Your Recommended Pathway</h3>
+                        <div id="resultContent" class="text-center mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gold py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <img src="images/cit-logo.png" alt="CIT Logo" height="50">
+                    <p class="mt-2 mb-0">Department of Computer and Information Technology</p>
+                    <p class="mb-0">Purdue University</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <p>&copy; 2023 Purdue University. All rights reserved.</p>
+                    <p>Created for CIT 312 Final Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
 </body>
 </html>
