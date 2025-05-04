@@ -1,151 +1,181 @@
+/* styles.css - Compiled from SCSS */
 /* Purdue Color Scheme */
-:root {
-  --purdue-gold: #CFB991;
-  --purdue-black: #000000;
-  --purdue-gray: #9E9E9E;
-  --purdue-white: #FFFFFF;
-}
-
-/* Base Styles */
+/* Base styles */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--purdue-white);
-  color: var(--purdue-black);
+  line-height: 1.6;
+  color: #000000;
 }
 
+/* Utility classes */
+.bg-black {
+  background-color: #000000 !important;
+}
+
+.text-gold {
+  color: #CFB991 !important;
+}
+
+.btn-gold {
+  background-color: #CFB991;
+  color: #000000;
+  border: none;
+  font-weight: 500;
+}
+.btn-gold:hover {
+  background-color: #b59a6a;
+  color: #000000;
+}
+
+/* Navigation */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.nav-link:hover {
+  color: #e8d4b0 !important;
+}
+
+/* Header */
 header {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: var(--purdue-black);
-  color: var(--purdue-gold);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/tech-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 0;
 }
-
 header h1 {
-  font-weight: bold;
-  margin-top: 1rem;
-  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  height: 80px;
-  width: auto;
+/* Footer */
+footer a {
+  color: #CFB991;
+}
+footer a:hover {
+  color: #e8d4b0;
+  text-decoration: none;
 }
 
-/* Quadrant Grid Layout */
+/* Quadrant Row */
 .quadrant-row {
   display: flex;
   flex-wrap: wrap;
   min-height: 60vh;
 }
 
+/* Quadrants */
 .quadrant {
   height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  padding: 1rem;
-  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
-.quadrant h2 {
-  color: var(--purdue-white);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  font-size: 2rem;
-  margin: 0;
-  text-align: center;
+.quadrant-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quadrant-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
   text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.quadrant:hover h2 {
+  transform: scale(1.1);
 }
 
-.quadrant:hover {
-  transform: scale(1.03);
-}
-
-/* Individual Quadrant Colors */
+/* Software Development Quadrant */
 .quadrant.software {
-  background-color: #b59a6a; /* Darkened Purdue gold */
+  background-color: #e5c999;
+  color: white;
+}
+.quadrant.software:hover {
+  background-color: #d8bc8a;
 }
 
+/* Data Management Quadrant */
 .quadrant.data {
-  background-color: #333333; /* Lightened black */
+  background-color: #000000;
+  color: white;
+}
+.quadrant.data:hover {
+  background-color: black;
 }
 
+/* Networking Quadrant */
 .quadrant.networking {
-  background-color: var(--purdue-gray);
+  background-color: #9E9E9E;
+  color: white;
+}
+.quadrant.networking:hover {
+  background-color: #919191;
 }
 
+/* Cybersecurity Quadrant */
 .quadrant.cybersecurity {
-  background-color: #8a6d3b; /* Darker gold */
+  background-color: #8a6d3b;
+  color: white;
+}
+.quadrant.cybersecurity:hover {
+  background-color: #7d602e;
 }
 
-/* Careers Dropdown */
-.careers-dropdown {
+/* Career Dropdown */
+.career-dropdown {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
   transform: translateY(100%);
-  transition: transform 0.3s ease;
-  padding: 15px;
+  transition: all 0.3s ease;
+  padding: 1rem;
   max-height: 70%;
   overflow-y: auto;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
-
-.quadrant.active .careers-dropdown {
+.quadrant.active .career-dropdown {
   transform: translateY(0);
 }
 
+/* Career Items */
 .career-item {
-  padding: 8px 0;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
   cursor: pointer;
-  border-bottom: 1px solid #eee;
-  font-size: 0.9rem;
-  text-transform: capitalize;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
 .career-item:hover {
-  color: var(--purdue-gold);
-  font-weight: bold;
+  background-color: #f2f2f2;
+  color: #CFB991;
 }
 
-/* Modal Styling */
-.modal-content {
-  border: 3px solid var(--purdue-gold);
-}
-
+/* Modal Styles */
 .modal-header {
-  background-color: var(--purdue-black);
-  color: var(--purdue-gold);
+  background-color: #000000;
+  color: #CFB991;
 }
 
-.modal-title {
-  text-transform: capitalize;
-}
-
-.btn-close {
+.btn-close-white {
   filter: invert(1);
 }
 
 /* Quiz Section */
-.quiz-container {
-  padding: 2rem;
+.quiz-section {
+  padding: 3rem 0;
   background-color: #f8f9fa;
-  margin-top: 2rem;
-}
-
-.quiz-question {
-  background-color: white;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--purdue-gold);
 }
 
 /* Responsive Adjustments */
@@ -153,77 +183,72 @@ header h1 {
   .quadrant {
     height: 250px;
   }
-  
-  .quadrant h2 {
-    font-size: 1.8rem;
-  }
 }
-
 @media (max-width: 768px) {
   .quadrant-row {
     flex-direction: column;
   }
-  
   .quadrant {
-    height: 200px;
     width: 100%;
+    height: 200px;
   }
-  
   header h1 {
     font-size: 2rem;
   }
-  
   .logo {
     height: 60px;
   }
 }
-
 @media (max-width: 576px) {
   .quadrant h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
-  
   .career-item {
-    font-size: 0.8rem;
-    padding: 6px 0;
+    font-size: 0.9rem;
+    padding: 0.4rem;
   }
 }
 
-/* Hamburger Menu Styling */
-.navbar-toggler {
-  border-color: var(--purdue-gold);
+/* Additional Spacing Utilities */
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+.mt-5 {
+  margin-top: 3rem !important;
+}
+.mt-6 {
+  margin-top: 4.5rem !important;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28207, 185, 145, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* Card Styles for Quiz */
+.card {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card-header {
+  background-color: #CFB991;
+  color: #000000;
+  font-weight: bold;
 }
 
-.navbar {
-  background-color: var(--purdue-black) !important;
+/* Form Styles */
+.form-check-input:checked {
+  background-color: #CFB991;
+  border-color: #CFB991;
 }
 
-.nav-link {
-  color: var(--purdue-gold) !important;
-}
-
-.nav-link:hover {
-  color: var(--purdue-white) !important;
-}
-
-/* Footer Styling */
-footer {
-  background-color: var(--purdue-black);
-  color: var(--purdue-gold);
-  padding: 1.5rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-/* Utility Classes */
-.text-gold {
-  color: var(--purdue-gold);
-}
-
-.bg-black {
-  background-color: var(--purdue-black);
+/* Results Display */
+#quizResults {
+  background-color: #000000;
+  color: #CFB991;
 }
