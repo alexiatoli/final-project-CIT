@@ -14,8 +14,41 @@ const questions = [
     {
         question: "What job title sounds most appealing to you?",
         options: ["Software Engineer", "Security Analyst", "Network Administrator", "Data Analyst"]
+    },
+    {
+        question: "Which tool or concept would you like to learn?",
+        options: ["JavaScript", "Firewalls", "Cisco Routers", "SQL"]
+    },
+    {
+        question: "What kind of problems do you like solving?",
+        options: ["Logical and coding puzzles", "Security breaches", "Connectivity issues", "Pattern analysis"]
+    },
+    {
+        question: "Which environment sounds ideal to you?",
+        options: ["Agile development team", "Security operations center", "IT infrastructure team", "Data analytics team"]
+    },
+    {
+        question: "Which topic excites you the most?",
+        options: ["Mobile app development", "Ethical hacking", "Cloud networking", "Data warehousing"]
+    },
+    {
+        question: "What do you value in a career?",
+        options: ["Creative problem-solving", "Defending digital systems", "Building reliable networks", "Extracting insights from data"]
+    },
+    {
+        question: "Which of these projects sounds most interesting?",
+        options: ["Creating a web app", "Analyzing malware", "Setting up a secure Wi-Fi network", "Building a dashboard from a database"]
+    },
+    {
+        question: "Where do you see yourself working?",
+        options: ["Tech startup", "Government cybersecurity agency", "Enterprise IT department", "Financial analytics firm"]
+    },
+    {
+        question: "What’s your favorite school subject?",
+        options: ["Computer Science", "Criminal Justice", "Electronics", "Statistics"]
     }
 ];
+
 
 const trackMap = {
     "Software Development": "Software Development",
