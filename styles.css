@@ -1,7 +1,7 @@
 /* General body styling */
 body {
   background-color: #EBD99F; /* Purdue's Dust */
-  color: #2E2A47; /* Text color */
+  color: #2E2A47; /* Text color (Purdue Dark) */
   font-family: 'Franklin Gothic', 'Arial', sans-serif; /* Purdue fallback fonts */
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@ header h1, header h2 {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: white;
-  color: #2E2A47; /* Text color */
+  color: #2E2A47; /* Purdue Dark */
   font-family: 'Franklin Gothic', 'Arial', sans-serif; /* Card font */
 }
 
@@ -37,20 +37,20 @@ header h1, header h2 {
 
 /* Modal content styling */
 .modal-content {
-  background-color: #A7A8AA; /* Purdue's Steel color */
-  color: #2E2A47; /* Text color */
+  background-color: #9D9795; /* Railway Gray */
+  color: #2E2A47; /* Purdue Dark */
   border-radius: 10px;
   font-family: 'Source Serif Pro', 'Georgia', serif; /* Serif font for modal */
 }
 
 /* Primary button styling */
 .btn-primary {
-  background-color: #2E2A47; /* Dark color */
+  background-color: #2E2A47; /* Purdue Dark */
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #191727; /* Slightly darker */
+  background-color: #191727; /* Slightly darker on hover */
 }
 
 /* Quiz Container Styling */
