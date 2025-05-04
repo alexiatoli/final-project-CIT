@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purdue CIT Career Pathways</title>
+    <title>CIT Career Pathways</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/favicon.ico">
@@ -13,8 +13,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="cit-logo.png" alt="CIT Logo" height="40">
-                <span class="ms-2 d-none d-md-inline">Applied Computing</span>
+                <img src="images/cit-logo.png" alt="CIT Logo" height="40">
+                <span class="ms-2">Applied Computing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,100 +33,47 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero bg-black text-gold py-5">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold">CIT Career Pathways</h1>
+    <header class="hero bg-black text-gold text-center py-4">
+        <div class="container">
+            <h1>CIT Career Pathways</h1>
             <p class="lead">Explore four exciting concentrations in Applied Computing</p>
         </div>
     </header>
 
     <!-- Quadrants Section -->
     <main class="container-fluid p-0">
-        <div class="row g-0 quadrant-container">
+        <div class="row g-0">
             <!-- Software Development -->
-            <section class="col-lg-3 col-md-6 quadrant software" id="software">
-                <div class="quadrant-content">
-                    <h2>Software Development</h2>
-                    <div class="career-dropdown"></div>
-                </div>
+            <section class="col-lg-3 col-md-6 p-4 quadrant software" id="software">
+                <h2>Software Development</h2>
+                <div class="careers mt-3"></div>
             </section>
             
             <!-- Data Management -->
-            <section class="col-lg-3 col-md-6 quadrant data" id="data">
-                <div class="quadrant-content">
-                    <h2>Data Management</h2>
-                    <div class="career-dropdown"></div>
-                </div>
+            <section class="col-lg-3 col-md-6 p-4 quadrant data" id="data">
+                <h2>Data Management</h2>
+                <div class="careers mt-3"></div>
             </section>
             
             <!-- Networking -->
-            <section class="col-lg-3 col-md-6 quadrant networking" id="networking">
-                <div class="quadrant-content">
-                    <h2>Networking</h2>
-                    <div class="career-dropdown"></div>
-                </div>
+            <section class="col-lg-3 col-md-6 p-4 quadrant networking" id="networking">
+                <h2>Networking</h2>
+                <div class="careers mt-3"></div>
             </section>
             
             <!-- Cybersecurity -->
-            <section class="col-lg-3 col-md-6 quadrant cybersecurity" id="cybersecurity">
-                <div class="quadrant-content">
-                    <h2>Cybersecurity</h2>
-                    <div class="career-dropdown"></div>
-                </div>
+            <section class="col-lg-3 col-md-6 p-4 quadrant cybersecurity" id="cybersecurity">
+                <h2>Cybersecurity</h2>
+                <div class="careers mt-3"></div>
             </section>
         </div>
     </main>
 
-    <!-- Career Modal -->
-    <div class="modal fade" id="careerModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-black text-gold">
-                    <h5 class="modal-title" id="modalTitle">Career Information</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body" id="modalBody">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img id="modalImage" src="" alt="" class="img-fluid mb-3">
-                            <h4 id="concentrationTitle"></h4>
-                            <p id="concentrationDesc"></p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Career Details</h4>
-                            <p id="careerDesc"></p>
-                            <div class="degree-info bg-light p-3 rounded">
-                                <h5>Suggested Degree</h5>
-                                <p id="degreeInfo"></p>
-                            </div>
-                            <div class="mt-3">
-                                <h5>Average Salary</h5>
-                                <p id="salaryInfo"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Career Quiz Section -->
+    <!-- Quiz Section -->
     <section id="quiz" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">CIT Career Quiz</h2>
-            <div class="card shadow">
-                <div class="card-body p-4">
-                    <form id="careerQuiz">
-                        <!-- Quiz questions would go here -->
-                        <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-gold btn-lg">Get Results</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="container text-center">
+            <h2 class="mb-4">CIT Career Quiz</h2>
+            <button class="btn btn-gold btn-lg">Get Results</button>
         </div>
     </section>
 
