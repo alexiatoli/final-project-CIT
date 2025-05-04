@@ -2,33 +2,48 @@ body {
   background-color: #A7A8AA;
   color: #2E2A47;
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 header {
   background-color: #F6A800;
   color: white;
   padding: 20px 0;
+  text-align: center;
+}
+header h1, header h2 {
+  margin: 0;
 }
 .card {
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  color: #2E2A47;
 }
 .card:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .modal-content {
   background-color: #A7A8AA;
   color: #2E2A47;
+  border-radius: 10px;
+}
+.btn-primary {
+  background-color: #2E2A47;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #191727;
+}
+#quizContainer .card {
+  max-width: 600px;
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
   .card {
     margin-bottom: 20px;
   }
 }
-@media (max-width: 480px) {
-  header {
-    font-size: 18px;
-  }
-}
-
 
