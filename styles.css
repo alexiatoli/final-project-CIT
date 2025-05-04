@@ -1,254 +1,167 @@
-/* styles.css - Compiled from SCSS */
 /* Purdue Color Scheme */
-/* Base styles */
+:root {
+    --purdue-gold: #CFB991;
+    --purdue-black: #000000;
+    --purdue-gray: #9E9E9E;
+    --purdue-white: #FFFFFF;
+}
+
+/* Base Styles */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #000000;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--purdue-black);
+    overflow-x: hidden;
 }
 
-/* Utility classes */
-.bg-black {
-  background-color: #000000 !important;
+/* Header Animation */
+.header-animation {
+    background: linear-gradient(135deg, var(--purdue-black) 0%, #1a1a1a 100%);
+    color: var(--purdue-gold);
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.text-gold {
-  color: #CFB991 !important;
+.header-animation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/digital-bg.jpg') center/cover;
+    opacity: 0.2;
+    z-index: 0;
 }
 
-.btn-gold {
-  background-color: #CFB991;
-  color: #000000;
-  border: none;
-  font-weight: 500;
-}
-.btn-gold:hover {
-  background-color: #b59a6a;
-  color: #000000;
+.logo {
+    height: 120px;
+    transition: all 0.5s ease;
 }
 
-/* Navigation */
-.navbar {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Quadrant Styles */
+.quadrant-container {
+    min-height: 70vh;
 }
 
-.nav-link {
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-}
-.nav-link:hover {
-  color: #e8d4b0 !important;
-}
-
-/* Header */
-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/tech-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 5rem 0;
-}
-header h1 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Footer */
-footer a {
-  color: #CFB991;
-}
-footer a:hover {
-  color: #e8d4b0;
-  text-decoration: none;
-}
-
-/* Quadrant Row */
-.quadrant-row {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 60vh;
-}
-
-/* Quadrants */
 .quadrant {
-  height: 300px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
 }
+
+.quadrant:hover {
+    transform: scale(1.02);
+    z-index: 10;
+}
+
 .quadrant-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.quadrant-content h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-.quadrant:hover h2 {
-  transform: scale(1.1);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Software Development Quadrant */
-.quadrant.software {
-  background-color: #e5c999;
-  color: white;
-}
-.quadrant.software:hover {
-  background-color: #d8bc8a;
-}
-
-/* Data Management Quadrant */
-.quadrant.data {
-  background-color: #000000;
-  color: white;
-}
-.quadrant.data:hover {
-  background-color: black;
+.quadrant h2 {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Networking Quadrant */
-.quadrant.networking {
-  background-color: #9E9E9E;
-  color: white;
-}
-.quadrant.networking:hover {
-  background-color: #919191;
+/* Individual Quadrant Colors */
+.software {
+    background: linear-gradient(45deg, #b59a6a, #d4b881);
 }
 
-/* Cybersecurity Quadrant */
-.quadrant.cybersecurity {
-  background-color: #8a6d3b;
-  color: white;
+.data {
+    background: linear-gradient(45deg, #333333, #555555);
 }
-.quadrant.cybersecurity:hover {
-  background-color: #7d602e;
+
+.networking {
+    background: linear-gradient(45deg, #7d7d7d, #a0a0a0);
+}
+
+.cybersecurity {
+    background: linear-gradient(45deg, #8a6d3b, #ad8849);
 }
 
 /* Career Dropdown */
 .career-dropdown {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  transform: translateY(100%);
-  transition: all 0.3s ease;
-  padding: 1rem;
-  max-height: 70%;
-  overflow-y: auto;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-.quadrant.active .career-dropdown {
-  transform: translateY(0);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    padding: 1rem;
+    transition: all 0.5s ease;
+    max-height: 70%;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
 }
 
-/* Career Items */
-.career-item {
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.quadrant.active .career-dropdown {
+    bottom: 0;
 }
+
+.career-item {
+    background: var(--purdue-white);
+    color: var(--purdue-black);
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 .career-item:hover {
-  background-color: #f2f2f2;
-  color: #CFB991;
+    background: var(--purdue-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Modal Styles */
 .modal-header {
-  background-color: #000000;
-  color: #CFB991;
+    border-bottom: 2px solid var(--purdue-gold);
 }
 
-.btn-close-white {
-  filter: invert(1);
-}
-
-/* Quiz Section */
-.quiz-section {
-  padding: 3rem 0;
-  background-color: #f8f9fa;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .quadrant {
-    height: 250px;
-  }
-}
-@media (max-width: 768px) {
-  .quadrant-row {
-    flex-direction: column;
-  }
-  .quadrant {
+.pathway-image {
     width: 100%;
     height: 200px;
-  }
-  header h1 {
-    font-size: 2rem;
-  }
-  .logo {
-    height: 60px;
-  }
-}
-@media (max-width: 576px) {
-  .quadrant h2 {
-    font-size: 1.8rem;
-  }
-  .career-item {
-    font-size: 0.9rem;
-    padding: 0.4rem;
-  }
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
-/* Additional Spacing Utilities */
-.mt-1 {
-  margin-top: 0.25rem !important;
-}
-.mt-2 {
-  margin-top: 0.5rem !important;
-}
-.mt-3 {
-  margin-top: 1rem !important;
-}
-.mt-4 {
-  margin-top: 1.5rem !important;
-}
-.mt-5 {
-  margin-top: 3rem !important;
-}
-.mt-6 {
-  margin-top: 4.5rem !important;
+/* Floating CTA */
+.floating-cta {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
 }
 
-/* Card Styles for Quiz */
-.card {
-  border: none;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-.card-header {
-  background-color: #CFB991;
-  color: #000000;
-  font-weight: bold;
-}
-
-/* Form Styles */
-.form-check-input:checked {
-  background-color: #CFB991;
-  border-color: #CFB991;
-}
-
-/* Results Display */
-#quizResults {
-  background-color: #000000;
-  color: #CFB991;
-}
+.btn-gold {
+    background-color: var(--purdue-gold);
+    color: var(--purdue-black);
+    font-weight: bold;
+    border: none;
+    padding
