@@ -8,6 +8,8 @@ body {
     background-color: $boilermaker-gray;
     color: $boilermaker-black;
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 // Header
@@ -15,15 +17,24 @@ header {
     background-color: $boilermaker-gold;
     color: white;
     padding: 20px 0;
+    text-align: center;
+
+    h1, h2 {
+        margin: 0;
+    }
 }
 
 // Quadrants / Cards
 .card {
     border: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    color: $boilermaker-black;
+
     &:hover {
         transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -31,17 +42,28 @@ header {
 .modal-content {
     background-color: $boilermaker-gray;
     color: $boilermaker-black;
+    border-radius: 10px;
+}
+
+// Button Customization (optional)
+.btn-primary {
+    background-color: $boilermaker-black;
+    border: none;
+
+    &:hover {
+        background-color: darken($boilermaker-black, 10%);
+    }
+}
+
+// Quiz Container Card (optional improvement)
+#quizContainer .card {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 // Media Queries for Responsiveness
 @media (max-width: 768px) {
     .card {
         margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        font-size: 18px;
     }
 }
