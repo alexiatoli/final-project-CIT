@@ -1,15 +1,20 @@
-/* General body styling */
+:root {
+  --purdue-dark: #2E2A47; /* Purdue Dark */
+  --purdue-dust: #EBD99F; /* Purdue's Dust */
+  --boilermaker-gold: #CFB991; /* Boilermaker Gold */
+  --railway-gray: #9D9795; /* Railway Gray */
+}
+
 body {
-  background-color: #EBD99F; /* Purdue's Dust */
-  color: #2E2A47; /* Text color (Purdue Dark) */
-  font-family: 'Franklin Gothic', 'Arial', sans-serif; /* Purdue fallback fonts */
+  background-color: var(--purdue-dust);
+  color: var(--purdue-dark);
+  font-family: 'Franklin Gothic', 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Header Styling */
 header {
-  background-color: #CFB991; /* Boilermaker Gold */
+  background-color: var(--boilermaker-gold);
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -17,17 +22,16 @@ header {
 
 header h1, header h2 {
   margin: 0;
-  font-family: 'Acumin Pro', 'Franklin Gothic', sans-serif; /* Purdue header fonts */
+  font-family: 'Acumin Pro', 'Franklin Gothic', sans-serif;
 }
 
-/* Card styling */
 .card {
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: white;
-  color: #2E2A47; /* Purdue Dark */
-  font-family: 'Franklin Gothic', 'Arial', sans-serif; /* Card font */
+  color: var(--purdue-dark);
+  font-family: 'Franklin Gothic', 'Arial', sans-serif;
 }
 
 .card:hover {
@@ -35,17 +39,15 @@ header h1, header h2 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Modal content styling */
 .modal-content {
-  background-color: #9D9795; /* Railway Gray */
-  color: #2E2A47; /* Purdue Dark */
+  background-color: var(--railway-gray);
+  color: var(--purdue-dark);
   border-radius: 10px;
-  font-family: 'Source Serif Pro', 'Georgia', serif; /* Serif font for modal */
+  font-family: 'Source Serif Pro', 'Georgia', serif;
 }
 
-/* Primary button styling */
 .btn-primary {
-  background-color: #2E2A47; /* Purdue Dark */
+  background-color: var(--purdue-dark);
   border: none;
 }
 
@@ -53,13 +55,11 @@ header h1, header h2 {
   background-color: #191727; /* Slightly darker on hover */
 }
 
-/* Quiz Container Styling */
 #quizContainer .card {
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Responsive Styling for smaller screens */
 @media (max-width: 768px) {
   .card {
     margin-bottom: 20px;
