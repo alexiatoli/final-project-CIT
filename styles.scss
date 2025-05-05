@@ -10,66 +10,73 @@ $background-color_4: var(--railway-gray);
 $background-color_5: var(--purdue-dark);
 $background-color_6: #191727;
 
-&:root {
-	--purdue-dark: #2E2A47;
-	--purdue-dust: #EBD99F;
-	--boilermaker-gold: #CFB991;
-	--railway-gray: #9D9795;
+:root {
+  --purdue-dark: #2E2A47;
+  --purdue-dust: #EBD99F;
+  --boilermaker-gold: #CFB991;
+  --railway-gray: #9D9795;
 }
+
 body {
-	background-color: $background-color_1;
-	color: $color_1;
-	font-family: $font-family_1;
-	margin: 0;
-	padding: 0;
+  background-color: $background-color_1;
+  color: $color_1;
+  font-family: $font-family_1;
+  margin: 0;
+  padding: 0;
 }
+
 header {
-	background-color: $background-color_2;
-	color: $color_2;
-	padding: 20px 0;
-	text-align: center;
-	h1 {
-		margin: 0;
-		font-family: $font-family_2;
-	}
-	h2 {
-		margin: 0;
-		font-family: $font-family_2;
-	}
+  background-color: $background-color_2;
+  color: $color_2;
+  padding: 20px 0;
+  text-align: center;
+
+  h1, h2 {
+    margin: 0;
+    font-family: $font-family_2;
+  }
 }
+
 .card {
-	border: none;
-	cursor: pointer;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	background-color: $background-color_3;
-	color: $color_1;
-	font-family: $font-family_1;
-	&:hover {
-		transform: scale(1.05);
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	}
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: $background-color_3;
+  color: $color_1;
+  font-family: $font-family_1;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
 }
+
 .modal-content {
-	background-color: $background-color_4;
-	color: $color_1;
-	border-radius: 10px;
-	font-family: $font-family_3;
+  background-color: $background-color_4;
+  color: $color_1;
+  border-radius: 10px;
+  font-family: $font-family_3;
 }
+
 .btn-primary {
-	background-color: $background-color_5;
-	border: none;
-	&:hover {
-		background-color: $background-color_6;
-	}
+  background-color: $background-color_5;
+  border: none;
+
+  &:hover {
+    background-color: $background-color_6;
+  }
 }
+
 #quizContainer {
-	.card {
-		max-width: 600px;
-		margin: 0 auto;
-	}
+  .card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
+
 @media (max-width: 768px) {
-	.card {
-		margin-bottom: 20px;
-	}
+  .card {
+    margin-bottom: 20px;
+  }
 }
+
