@@ -1,68 +1,75 @@
-/* General body styling */
+$color_1: var(--purdue-dark);
+$color_2: white;
+$font-family_1: 'Franklin Gothic', 'Arial', sans-serif;
+$font-family_2: 'Acumin Pro', 'Franklin Gothic', sans-serif;
+$font-family_3: 'Source Serif Pro', 'Georgia', serif;
+$background-color_1: var(--purdue-dust);
+$background-color_2: var(--boilermaker-gold);
+$background-color_3: white;
+$background-color_4: var(--railway-gray);
+$background-color_5: var(--purdue-dark);
+$background-color_6: #191727;
+
+&:root {
+	--purdue-dark: #2E2A47;
+	--purdue-dust: #EBD99F;
+	--boilermaker-gold: #CFB991;
+	--railway-gray: #9D9795;
+}
 body {
-  background-color: #EBD99F; /* Purdue's Dust */
-  color: #2E2A47; /* Text color */
-  font-family: 'Franklin Gothic', 'Arial', sans-serif; /* Purdue fallback fonts */
-  margin: 0;
-  padding: 0;
+	background-color: $background-color_1;
+	color: $color_1;
+	font-family: $font-family_1;
+	margin: 0;
+	padding: 0;
 }
-
-/* Header Styling */
 header {
-  background-color: #CFB991; /* Boilermaker Gold */
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+	background-color: $background-color_2;
+	color: $color_2;
+	padding: 20px 0;
+	text-align: center;
+	h1 {
+		margin: 0;
+		font-family: $font-family_2;
+	}
+	h2 {
+		margin: 0;
+		font-family: $font-family_2;
+	}
 }
-
-header h1, header h2 {
-  margin: 0;
-  font-family: 'Acumin Pro', 'Franklin Gothic', sans-serif; /* Purdue header fonts */
-}
-
-/* Card styling */
 .card {
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: white;
-  color: #2E2A47; /* Text color */
-  font-family: 'Franklin Gothic', 'Arial', sans-serif; /* Card font */
+	border: none;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	background-color: $background-color_3;
+	color: $color_1;
+	font-family: $font-family_1;
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	}
 }
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Modal content styling */
 .modal-content {
-  background-color: #A7A8AA; /* Purdue's Steel color */
-  color: #2E2A47; /* Text color */
-  border-radius: 10px;
-  font-family: 'Source Serif Pro', 'Georgia', serif; /* Serif font for modal */
+	background-color: $background-color_4;
+	color: $color_1;
+	border-radius: 10px;
+	font-family: $font-family_3;
 }
-
-/* Primary button styling */
 .btn-primary {
-  background-color: #2E2A47; /* Dark color */
-  border: none;
+	background-color: $background-color_5;
+	border: none;
+	&:hover {
+		background-color: $background-color_6;
+	}
 }
-
-.btn-primary:hover {
-  background-color: #191727; /* Slightly darker */
+#quizContainer {
+	.card {
+		max-width: 600px;
+		margin: 0 auto;
+	}
 }
-
-/* Quiz Container Styling */
-#quizContainer .card {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Responsive Styling for smaller screens */
 @media (max-width: 768px) {
-  .card {
-    margin-bottom: 20px;
-  }
+	.card {
+		margin-bottom: 20px;
+	}
 }
-
