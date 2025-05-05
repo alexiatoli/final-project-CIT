@@ -1,69 +1,59 @@
 :root {
-  --purdue-dark: #2E2A47; /* Purdue Dark */
-  --purdue-dust: #EBD99F; /* Purdue's Dust */
-  --boilermaker-gold: #CFB991; /* Boilermaker Gold */
-  --railway-gray: #9D9795; /* Railway Gray */
+	 --purdue-dark: #2e2a47;
+	 --purdue-dust: #ebd99f;
+	 --boilermaker-gold: #cfb991;
+	 --railway-gray: #9d9795;
 }
-
-body {
-  background-color: var(--purdue-dust);
-  color: var(--purdue-dark);
-  font-family: 'Franklin Gothic', 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+ body {
+	 background-color: var(--purdue-dust);
+	 color: var(--purdue-dark);
+	 font-family: 'Franklin Gothic', 'Arial', sans-serif;
+	 margin: 0;
+	 padding: 0;
 }
-
-header {
-  background-color: var(--boilermaker-gold);
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+ header {
+	 background-color: var(--boilermaker-gold);
+	 color: white;
+	 padding: 20px 0;
+	 text-align: center;
 }
-
-header h1, header h2 {
-  margin: 0;
-  font-family: 'Acumin Pro', 'Franklin Gothic', sans-serif;
+ header h1, header h2 {
+	 margin: 0;
+	 font-family: 'Acumin Pro', 'Franklin Gothic', sans-serif;
 }
-
-.card {
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: white;
-  color: var(--purdue-dark);
-  font-family: 'Franklin Gothic', 'Arial', sans-serif;
+ .card {
+	 border: none;
+	 cursor: pointer;
+	 transition: transform 0.3s ease, box-shadow 0.3s ease;
+	 background-color: white;
+	 color: var(--purdue-dark);
+	 font-family: 'Franklin Gothic', 'Arial', sans-serif;
 }
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+ .card:hover {
+	 transform: scale(1.05);
+	 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
-.modal-content {
-  background-color: var(--railway-gray);
-  color: var(--purdue-dark);
-  border-radius: 10px;
-  font-family: 'Source Serif Pro', 'Georgia', serif;
+ .modal-content {
+	 background-color: var(--railway-gray);
+	 color: var(--purdue-dark);
+	 border-radius: 10px;
+	 font-family: 'Source Serif Pro', 'Georgia', serif;
 }
-
-.btn-primary {
-  background-color: var(--purdue-dark);
-  border: none;
+ .btn-primary {
+	 background-color: var(--purdue-dark);
+	 border: none;
 }
-
-.btn-primary:hover {
-  background-color: #191727; /* Slightly darker on hover */
+ .btn-primary:hover {
+	 background-color: #191727;
 }
-
-#quizContainer .card {
-  max-width: 600px;
-  margin: 0 auto;
+ #quizContainer .card {
+	 max-width: 600px;
+	 margin: 0 auto;
 }
-
-@media (max-width: 768px) {
-  .card {
-    margin-bottom: 20px;
-  }
+ @media (max-width: 768px) {
+	 .card {
+		 margin-bottom: 20px;
+	}
 }
 
 
