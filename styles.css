@@ -40,9 +40,13 @@
 	 font-family: 'Source Serif Pro', 'Georgia', serif;
 }
 .btn-primary {
-	 background-color: var(--purdue-dark);
-	 border: none;
+	background-color: var(--purdue-dark) !important;
+	border: none !important;
 }
+.btn-primary:hover {
+	background-color: #191727 !important;
+}
+
 
  #quizContainer .card {
 	 max-width: 600px;
