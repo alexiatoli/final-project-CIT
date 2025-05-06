@@ -1,54 +1,77 @@
-📄 Final Project Documentation
-This document outlines key implementation decisions regarding styling, responsiveness, and design rationale.
+Final Project Documentation
+This document outlines the implementation of styling, responsiveness, and UI/UX design decisions in our project using SCSS and Bootstrap.
 
-1. Use of Less/SCSS
-We utilized SCSS (Sassy CSS) to streamline and organize the styling of the website. Key features used include:
+1. Use of SCSS (Sassy CSS)
+To manage and scale our CSS efficiently, we used SCSS, which offers powerful features over plain CSS:
 
-Variables: Defined for consistent colors, font sizes, and spacing.
+Variables: Common values like colors, font sizes, and spacing were defined as variables to maintain consistency across the site.
 
-Nesting: Allowed clear, hierarchical styling reflecting the HTML structure.
+Nesting: Styles were nested to mirror the HTML structure, improving readability.
 
-Mixins: Used to reduce repetition, especially for buttons and media queries.
+Mixins: Reusable code blocks were created for repeated patterns such as buttons and breakpoints (media queries).
 
-Partials: SCSS files were split into logical components (e.g., _header.scss, _layout.scss) and combined using @import.
+Partials: SCSS files were modularized (e.g., _header.scss, _layout.scss) and imported into a main styles.scss file.
 
-SCSS was compiled into CSS using a task runner, and the resulting file was linked in the HTML pages.
+Compilation: SCSS was compiled into a single CSS file using a task runner (e.g., Gulp or npm script) and linked in HTML files.
 
 2. Responsiveness
-Responsiveness was achieved using a combination of:
+We ensured a mobile-first, responsive design using:
 
-Bootstrap Grid System: Used .container, .row, and .col- classes to create a fluid, responsive layout.
+Bootstrap Grid System: Layouts were built with .container, .row, and .col- classes for fluid responsiveness.
 
-Media Queries: Custom SCSS media queries adjusted layout and font sizes for tablets and phones.
+Media Queries: Custom SCSS breakpoints targeted screen widths for mobile, tablet, and desktop to adjust padding, font sizes, and flex layouts.
 
-Bootstrap Utilities: Classes like .d-flex, .flex-wrap, and .text-center helped adapt content across devices.
+Bootstrap Utility Classes: Classes like .d-flex, .flex-wrap, .justify-content-center, and .text-center helped optimize alignment and spacing on various screen sizes.
 
-Responsive Images: All images use .img-fluid to scale correctly with their containers.
+Responsive Images: All images use the .img-fluid class to scale within their containers.
 
-The layout was tested across common breakpoints to ensure mobile, tablet, and desktop usability.
+Extensive testing was done across breakpoints (576px, 768px, 992px, 1200px+) to ensure usability.
 
-3. Favicon Rationale
-The favicon was designed to:
+3. Hamburger Menu
+To enhance mobile navigation:
 
-Reflect the project theme.
+We implemented Bootstrap’s responsive .navbar, which automatically converts to a hamburger menu on smaller screens.
 
-Maintain branding using the primary color scheme defined in SCSS.
+The toggle button (.navbar-toggler) was added to control the collapse behavior of menu items.
 
-Ensure clarity at small sizes, optimized for standard favicon dimensions (16x16, 32x32).
+The button includes proper aria-* attributes for screen readers, improving accessibility.
 
-Created using favicon.io and included using a <link> tag in the <head> section.
+4. Favicon
+The favicon was designed to represent the site theme and maintain branding consistency.
 
-4. Bootstrap Features Rationale
-The following four Bootstrap features were selected to enhance usability and speed up development:
+It uses the project’s primary SCSS color and was optimized for small sizes (16x16, 32x32).
+
+Created using favicon.io, and included in HTML <head> as:
+
+html
+<link rel="icon" type="image/png" href="favicon.png">
+
+5. Bootstrap Features Used
+We selected the following Bootstrap components for rapid development and enhanced user experience:
 
 Navbar (.navbar)
-Provided a responsive, accessible navigation menu with built-in support for toggling on mobile devices.
+Created a responsive header that collapses into a hamburger menu.
+
+Provided semantic and accessible navigation.
 
 Cards (.card)
-Used to present grouped content (e.g., product previews, blog posts) in a visually structured way.
+Used to present structured content like service offerings, blog previews, or product features.
+
+Styled uniformly for consistency across sections.
 
 Carousel (.carousel)
-Added to display rotating featured content with minimal JavaScript setup.
+Used to feature multiple highlighted items (e.g., promotions or images).
+
+Minimal JavaScript needed and includes swipe/touch support on mobile.
 
 Modals (.modal)
-Used for login prompts and confirmation dialogs to reduce page reloads and improve UX.
+Implemented for login, alerts, and confirmations.
+
+Helped prevent page reloads and offered a seamless user experience.
+
+6. ACC Principles: Accessibility, Consistency, Clarity
+Accessibility: Used aria-* attributes for menus and buttons, ensured keyboard navigation, and tested color contrast.
+
+Consistency: Reused SCSS variables and mixins, and followed Bootstrap conventions across components.
+
+Clarity: Clean layouts, readable font sizes, and intuitive navigation helped users find information quickly.
