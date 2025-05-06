@@ -30,7 +30,7 @@ The layout was tested across common breakpoints to ensure mobile, tablet, and de
 3. Favicon Rationale
 The favicon was designed to:
 
-Reflect the project theme (e.g., a shopping cart for an e-commerce site, or a book for a library).
+Reflect the project theme.
 
 Maintain branding using the primary color scheme defined in SCSS.
 
